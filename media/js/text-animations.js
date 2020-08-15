@@ -1,0 +1,28 @@
+//////////////////////////////////////////////////////////////////////////
+// Title reveal animation ////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+
+// Get all the titles from the page
+var titles = document.getElementsByClassName('animated-title');
+
+// For all the titles put each letter in a span.
+for (var i=0;i<titles.length;i++){
+    titles[i].innerHTML = titles[i].textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+}
+
+// Animate each span with anime
+anime.timeline()
+.add({
+    targets: '.animated-title .letter',
+    translateX: [40,0],
+    translateZ: 0,
+    opacity: [0,1],
+    easing: "easeOutExpo",
+    duration: 1200,
+    delay: (el, i) => 500 + 30 * i
+});
+
+
+//////////////////////////////////////////////////////////////////////////
+// Subtitle reveal animation /////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////

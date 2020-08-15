@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/* Varibles for design */
+:root {
+    /* Colors */
+    --background-color: #FFF;
+    --text-title-color: #000;
+    --text-subtitle-color: #000;
+    --text-color: #000;
+}
+
+/* Basic backdrop design */
+body {
+    background-color: var(--background-color);
+    width: 80%;
+    height: 100%;
+    min-width: 600px;
+    margin: auto;
+
+    /* border: 1px green dotted; */
+}
+
+/* Text designs --------------------------------------------------------------------- */
+
+h1 {
+    display: block;
+    font-family: 'Major Mono Display', monospace;
+    color: var(--text-title-color);
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+.animated-title .letter{
+    display: inline-block;
+    line-height: 1em;
+}
+
+h2 {
+    display: block;
+    font-family: 'EB Garamond', serif;
+    color: var(--text-subtitle-color);
+    font-size: 25px;
+    font-variation-settings: 'wght' 400;
+    transition: font-variation-settings 0.15s ease-out;
+}
+
+h3 {
+    display: inline-block;
+    font-family: 'EB Garamond', serif;
+    color: var(--text-subtitle-color);
+    font-size: 20px;
+    font-variation-settings: 'wght' 500;
+    transition: font-variation-settings 0.15s ease-out;
+}
+
+h2:hover, h3:hover {
+    transition: font-variation-settings 0.15s ease-out;
+    font-variation-settings: 'wght' 600;
+}
+
+p {
+    display: block;
+    font-size: 12px;
+    margin: 0 auto;
+}
+
+/* Generic tags used across pages ------------------------------------------------ */
+
+.full-width-container {
+    display: block;
+    width: 100%;
+
+    /* border: 1px darkblue dotted; */
+}
+
+
+
+/* Specific to Page Classes ------------------------------------------------------- */
+
+.website-title {
+    display: block;
+    position: relative;
+    margin: auto;
+    top: 50%;
+    text-align: center;
+    transform: translateY(-50%);
+
+    /* border: 1px dotted grey; */
+}
