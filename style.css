@@ -14,9 +14,15 @@
 }
 
 /* Basic backdrop design */
-body {
+body{
     background-color: var(--background-color);
-    width: 80%;
+    width: 100%;
+    height: 100%;
+
+    /* border: 1px red dotted; */
+}
+.main-container {
+    width: 100vw;
     height: 100%;
     min-width: 100px;
     margin: auto;
@@ -43,7 +49,7 @@ h2 {
     display: block;
     font-family: 'EB Garamond', serif;
     color: var(--text-subtitle-color);
-    font-size: 25px;
+    font-size: 50px;
     font-variation-settings: 'wght' 400;
     transition: font-variation-settings 0.15s ease-out;
 }
@@ -52,8 +58,8 @@ h3 {
     display: inline-block;
     font-family: 'EB Garamond', serif;
     color: var(--text-subtitle-color);
-    font-size: 23px;
-    font-variation-settings: 'wght' 500;
+    font-size: 25px;
+    font-variation-settings: 'wght' 400;
     transition: font-variation-settings 0.15s ease-out;
 }
 
@@ -63,6 +69,9 @@ h2:hover, h3:hover {
 }
 
 p {
+    font-family:'Open Sans', sans-serif;
+    font-weight: 300;
+    color: var(--text-color);
     display: block;
     font-size: 20px;
     margin: 0 auto;
@@ -89,12 +98,48 @@ p {
 /* Specific to Page Classes ------------------------------------------------------- */
 
 .website-title {
-    display: block;
+    display: inline-block;
     position: relative;
     margin: auto;
     top: 50%;
+    left: 50%;
     text-align: center;
-    transform: translateY(-50%);
+    transform: translate(-50%,-50%);
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
 
     /* border: 1px dotted grey; */
+}
+
+.top-logo{
+    position: fixed;
+    top: 30px;
+    left: 10%;
+    transform: translateX(0%);
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+}
+
+.night-bg {
+    background: #000d21;
+    background: radial-gradient(circle at center, #000d21, #000712);
+}
+
+.catchy-text {
+    display: inline-block;
+    position: relative;
+    top: 40%;
+    left: 10%;
+    transform: translateY(-50%);
+    text-align: left;
+}
+
+.catchy-text p{
+    color: white;
+    max-width: 700px;
+}
+
+.catchy-text h2 {
+    color: #fff;
+    font-size: 55px;
 }
