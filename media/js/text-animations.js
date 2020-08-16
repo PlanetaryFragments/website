@@ -26,31 +26,3 @@ anime.timeline()
 //////////////////////////////////////////////////////////////////////////
 // Subtitle reveal animation /////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
-
-// window.addEventListener('mousemove', event => {
-//     bg = document.getElementsByClassName('night-bg');
-//     if (bg.length>0){
-//         bg = bg[0];
-//     }
-//     else {
-//         return;
-//     }
-
-//     mouseXpercentage = Math.round(event.offsetX / window.innerWidth * 100);
-//     mouseYpercentage = Math.round(event.offsetY / window.innerHeight * 100);
-
-//     bg.style.background = 'radial-gradient(circle at ' + mouseXpercentage + '% ' + mouseYpercentage + '%, white, #000712)'
-// });
-
-// var toggle_height = 300;
-// var prev = !(window.scrollY >= toggle_height);
-// window.addEventListener('scroll', function() {
-//     // console.log(window.scrollY);
-//     current = window.scrollY >= toggle_height;
-//     if (current == prev){
-//         body = document.getElementsByTagName('body')[0];
-//         body.classList.toggle('night-bg');
-//     }
-//     // console.log(prev,current)
-//     prev = !current;
-// });
