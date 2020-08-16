@@ -32,10 +32,12 @@ var color1 = hexToRgb(target.dataset.color1);               // Get the initial c
 var color2 = hexToRgb(target.dataset.color2);               // Get the final color
 var accent_color = hexToRgb(target.dataset.accent_color);   // Get the accent Color
 var trigger = target.dataset.trigger;                       // Get the percentage height from viewport that this transformation is triggered
-var cursror_x = 0                                           // initial value for cursor
-var cursror_y = 0                                           // initial value for cursor
-var new_color = color1                                      // Initial color value 
-var new_accent_color = color1                               // Initial color value
+var cursror_x = 0;                                          // initial value for cursor
+var cursror_y = 0;                                          // initial value for cursor
+var new_color = color1;                                     // Initial color value 
+var new_accent_color = color1;                              // Initial color value
+var is_below = false;
+var crickets = new Audio('./media/wav/crickets-light.wav');
 
 // Sets a radial gradient background between two colors with the ceter at (x,y)
 function set_background_gradient(target,x,y,color_bg,color_acc){
@@ -59,6 +61,15 @@ window.addEventListener('scroll', (event)=>{
     new_b = Math.round((1 - progress)*color1.b + progress*accent_color.b);  // Change the blue component
 
     new_accent_color = rgbToHex(new_r,new_g,new_b);                         // Write a final color
+
+    if(y >= 0 && !is_below){
+        is_below = true;
+        crickets.play();
+    } 
+    else if (y < 0 && is_below){
+        is_below = false;
+        crickets.pause();
+    }
 
     set_background_gradient(target,cursror_x,cursror_y,new_color,new_accent_color);
 });
