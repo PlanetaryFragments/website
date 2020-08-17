@@ -65,6 +65,7 @@ window.addEventListener('scroll', (event)=>{
     // PLay audio if needed
     if(y >= 0 && !is_below){
         is_below = true;
+        crickets.loop = true;
         crickets.play();
     } 
     else if (y < 0 && is_below){
