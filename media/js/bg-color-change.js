@@ -62,6 +62,7 @@ window.addEventListener('scroll', (event)=>{
 
     new_accent_color = rgbToHex(new_r,new_g,new_b);                         // Write a final color
 
+    // PLay audio if needed
     if(y >= 0 && !is_below){
         is_below = true;
         crickets.play();

@@ -24,5 +24,48 @@ anime.timeline()
 
 
 //////////////////////////////////////////////////////////////////////////
+// Title motion at height ////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+var is_on_header = false;
+
+// Creae animations
+// container animations
+var animate = anime.timeline({
+    easing: 'easeOutExpo',
+    duration: 1000,
+    autoplay: false
+}).add({
+    targets: '#title-container',
+    translateX: ['-50%','0%'],
+    left: '10vw',
+    top: '5vw',
+},0).add({
+    targets: '#title-container h1',
+    fontSize: 20,
+    color: '#fff'
+},0).add({
+    targets: '#title-container h3',
+    opacity: [1,0],
+    fontSize: 10
+},0);
+
+
+window.addEventListener('scroll',()=>{
+    title = document.getElementById('title-container');     // get the title object
+
+    let activation_height = title.dataset.activation_height/100 * window.innerHeight;
+    let deactivation_height = title.dataset.deactivation_height/100 * window.innerHeight;
+    let delta_height = deactivation_height - activation_height;
+    let scroll = window.scrollY-activation_height
+
+    scroll = (scroll < 0 ? 0 : (scroll/delta_height > 1 ? 1 : scroll/delta_height)) * animate.duration;
+
+    animate.seek(scroll);
+
+    // console.log(window.scrollY,is_on_header);
+
+});
+
+//////////////////////////////////////////////////////////////////////////
 // Subtitle reveal animation /////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
