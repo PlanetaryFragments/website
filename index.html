@@ -9,22 +9,29 @@
         <link rel="stylesheet" href="./style.css" type="text/css">
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js" integrity="sha512-LfB+BcvR3zBt7ebVskhSWiSbEUiG3p5EcCprkieldsKhBeR6wpnLi0VpWC2GNgVGWP2n/skO8Bx2oKNjUhXCkw==" crossorigin="anonymous"></script>
-  
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.0/paper-core.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.4.0/simplex-noise.min.js"></script>
 
         <base target="_blank">
         <title>Planetary Fragments</title>
     </head>
 
     <!-- Main Body -->
-    <body >
+    <body>
         <div class="main-container" id="bg" data-color1="#ffffff" data-color2="#01000d" data-accent_color="#02001f" data-trigger="20">
+            <!-- Add the cursor -->
+            <div class="cursor cursor-tracker"></div>
+            <canvas class="cursor cursor-canvas" resize></canvas>
+            <script src="./media/js/cursor.js" language="javscript" type="text/javascript"></script>
+
+            <!-- Script that handles color change -->
             <script language="javascript" type="text/javascript" src="./media/js/bg-color-change.js"></script>
             
             <!-- Title of webpage -->
             <div class="full-width-container" style="height: 100vh;">
                 <div class="website-title" id="title-container" data-activation_height="10" data-deactivation_height="80">
                     <h1 class="animated-title">Planetary Fragments</h1>
-                    <h3 class="animated-title">a science story book</h2>
+                    <h3 class="animated-title hoverable">a science story book</h2>
                 </div>
             </div>
             <script language="javascript" type="text/javascript" src="./media/js/text-animations.js"></script>
@@ -32,7 +39,7 @@
             <!-- Attention grabbing night mode -->
             <div class="full-width-container" style="height: 100vh;">
                 <div class="catchy-text">
-                    <h2>What are you after?</h2>
+                    <h2 class="hoverable">What are you after?</h2>
                     <br>
                     <p>I see you are a thinker, explorer, risk taker. Someone who cannot stand taking anything for granted.</p>
                     <br>

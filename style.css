@@ -11,6 +11,9 @@
     --text-title-color: #000;
     --text-subtitle-color: #000;
     --text-color: #000;
+    --cursor-color: #000;
+
+    cursor: none;
 }
 
 /* Basic backdrop design */
@@ -75,6 +78,30 @@ p {
     display: block;
     font-size: 20px;
     /* margin: 0 auto; */
+}
+
+/* Cursor style ------------------------------------------------------------------ */
+.cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+}
+
+.cursor-tracker {
+    width: 15px;
+    height: 15px;
+    left:-7.5px;
+    top:-7.5px;
+    border-radius: 50%;
+    z-index: 11000;
+    background: var(--cursor-color);
+}
+
+.cursor-canvas {
+    width: 100vw;
+    height: 100vh;
+    z-index: 12000;
 }
 
 /* Generic tags used across pages ------------------------------------------------ */
