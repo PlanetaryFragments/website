@@ -73,7 +73,10 @@ window.addEventListener('scroll', (event)=>{
         crickets.pause();
     }
 
-    set_background_gradient(target,cursror_x,cursror_y,new_color,new_accent_color);
+    const render = () => {
+        set_background_gradient(target,cursror_x,cursror_y,new_color,new_accent_color)
+    }
+    requestAnimationFrame(render);
 });
 
 // Add an event listener for mouse motion to follow the light
@@ -81,5 +84,8 @@ window.addEventListener('mousemove',(event)=>{
     cursror_x = event.clientX + window.scrollX;     // Update the position of the mouse on the global thingy
     cursror_y = event.clientY + window.scrollY;     // Update the position of the moise on the global thingy
 
-    set_background_gradient(target,cursror_x,cursror_y,new_color,new_accent_color); // Set background 
+    const render = () => {
+        set_background_gradient(target,cursror_x,cursror_y,new_color,new_accent_color)
+    }
+    requestAnimationFrame(render);
 });

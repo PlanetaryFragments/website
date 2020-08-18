@@ -60,7 +60,11 @@ window.addEventListener('scroll',()=>{
 
     scroll = (scroll < 0 ? 0 : (scroll/delta_height > 1 ? 1 : scroll/delta_height)) * animate.duration;
 
-    animate.seek(scroll);
+    const render = () => {
+        animate.seek(scroll);
+    }
+
+    requestAnimationFrame(render);
 
     // console.log(window.scrollY,is_on_header);
 
